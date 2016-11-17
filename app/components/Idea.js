@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getGraph } from "../actions/actions.js";
 
 
-let Query = React.createClass({
+let Idea = React.createClass({
   componentDidMount(){
     this.props.dispatch(
       getGraph("{ideas(id:2){id, name,user}}")
@@ -36,6 +36,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-export const QueryContainer = connect(
+export const IdeaContainer = connect(
   mapStateToProps
-)(Query)
+)(Idea)

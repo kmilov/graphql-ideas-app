@@ -7,7 +7,7 @@ import {queryReducer} from "./app/reducers/reducer.js";
 import thunkMiddleware from "redux-thunk";
 
 
-import {QueryContainer} from "./app/components/Query.js"
+import {IdeaContainer} from "./app/components/Idea.js"
 import {QueryInputContainer} from "./app/components/QueryInput.js"
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
@@ -16,7 +16,7 @@ const Main = React.createClass({
   render: () => {
     return (
       <div className="IdeasContainer">
-        <QueryContainer />
+        <IdeaContainer />
         <QueryInputContainer />
       </div>
     )
