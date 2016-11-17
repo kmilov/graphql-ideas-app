@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { getGraph } from "../actions/actions.js";
 
 
-let Idea = React.createClass({
+class Idea extends React.Component {
   componentDidMount(){
     this.props.dispatch(
       getGraph("{ideas(id:2){id, name,user}}")
     )
-  },
+  }
 
   render() {
       let dispatch = this.props.dispatch;
@@ -28,7 +28,7 @@ let Idea = React.createClass({
         </div>
       )
   }
-});
+}
 
 const mapStateToProps = (state) => {
   return {
