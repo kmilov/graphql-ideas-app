@@ -14,17 +14,12 @@ class Idea extends React.Component {
       let dispatch = this.props.dispatch;
       let fetchInProgress = String(this.props.store.get('fetching'));
       let queryText;
-      let storeIdeas = this.props.store.get('data').toObject();
-      let idea = {}
-
-      if (storeIdeas.ideas) {
-        idea = storeIdeas.ideas;
-      }
+      let idea = this.props.store.get('data').toObject().ideas || {}
 
       return (
         <div className="Idea">
           <h3 className="Idea-author">{idea.user}</h3>
-          <blockquote className="Idea-quote">"{idea.name}"</blockquote>
+          <blockquote className="Idea-quote">{idea.name}</blockquote>
         </div>
       )
   }
